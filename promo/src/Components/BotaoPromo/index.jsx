@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./style.css"
 
 function BotaoPromo({useProduct,setPromo}){
+
+    const [use,setUse]=useState(false)
 
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
@@ -17,10 +20,12 @@ function BotaoPromo({useProduct,setPromo}){
         const desc = getRandomFloatInclusive(40, 90)
         const produtosorteado = useProduct.filter((e)=>e.id===id)[0]
         produtosorteado.discount = (desc).toFixed(2)
-        produtosorteado.newvalue = (produtosorteado.price*(1-desc/100)).toFixed(2)
+        produtosorteado.oldprice = produtosorteado.price
+        produtosorteado.price = (produtosorteado.oldprice*(1-desc/100)).toFixed(2)
+        setUse(true)
         setPromo([produtosorteado])
     }
 
-    return(<button onClick={Produ} className="gerarpromocao">GERAR PROMOÇÂO</button>)
+    return(<button onClick={!use && Produ} className="gerarpromocao">GERAR PROMOÇÂO</button>)
 }
 export default BotaoPromo;

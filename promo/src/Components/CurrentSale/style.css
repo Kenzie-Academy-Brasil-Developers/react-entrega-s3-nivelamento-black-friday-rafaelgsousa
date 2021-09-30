@@ -1,0 +1,17 @@
+.carro {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+}
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.item{
+    width: 150px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}

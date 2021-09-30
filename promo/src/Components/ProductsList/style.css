@@ -1,0 +1,12 @@
+.produtos {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.produtos li {
+    width: 150px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
